@@ -32,10 +32,16 @@ python3 -m http.server 8080
 # http://localhost:8080
 ```
 
-### GitHub Pages 배포
-1. `blog-tool` 폴더를 저장소 루트로 올리거나, Pages 설정에서 `/blog-tool`을 루트로 지정
-2. Settings > Pages > Source: `Deploy from a branch` → `main` / `/root`
-3. `https://{아이디}.github.io/{저장소}/blog-tool/` 로 접속
+### GitHub Pages (배포 중)
+- 라이브: <https://jaehoonlee80-art.github.io/blog-tool/>
+- 저장소: <https://github.com/jaehoonlee80-art/blog-tool> (이 폴더가 저장소 루트)
+- 배포 소스: **`gh-pages` 브랜치 / 루트(`/`)** · Settings > Pages > Source: `Deploy from a branch`
+
+`main`과 `gh-pages`는 같은 내용으로 맞춰 두었습니다. 고친 뒤에는 두 브랜치를 함께 올립니다.
+```bash
+git push origin main
+git push origin main:gh-pages   # 이 줄이 있어야 사이트가 갱신됩니다
+```
 
 > 로컬 파일(`file://`)에서도 모든 기능이 동작하도록 외부 CDN·폰트·이미지를 쓰지 않았습니다.
 > 다만 크롬 확장은 `chrome://extensions`에서 폴더를 직접 로드해야 하고, `file://` 페이지에서는 확장이 주입되지 않습니다.
